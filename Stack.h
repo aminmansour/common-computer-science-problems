@@ -2,9 +2,60 @@
 #define STACK_H
 
 #include "vector.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <exception>
+using std::cout;
+using std::exception;
+using std::string;
+using std::stoi;
 using pep::vector;
+using std::istringstream;
 
 // TODO: Your code for question 3 goes here
+class Stack{
+private:
+  vector<double> stack;
+  int size;
+  int top;
+
+public:
+
+  Stack():size(0),top(-1){
+    stack.resize(30);
+  }
+
+  bool empty() const{
+    return (size==0);
+  }
+
+  void push(const double input){
+    if(stack.size()==(top+1)){
+      cout<<"The stack is full, adding failed.";
+    }
+    else{
+      stack[++top] = input;
+      ++size;
+    }
+  }
+
+  double pop(){
+    if(empty()){
+      cout<<"The stack is empty so removing failed.";
+        return 0;
+    }
+    else{
+      double returningValue = stack[top];
+      stack[top] = 0;
+      --top;
+      --size;
+      return returningValue;
+    }
+  }
+
+
+};
 
 
 
