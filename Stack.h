@@ -57,6 +57,43 @@ public:
 
 };
 
+double evaluate(const string input){
+  Stack s;
+  istringstream symbols(input);
+  while (symbols) {
+    string symbol;
+    symbols >> symbol;
+    if(symbol == "+" ){
+      double a = s.pop();
+      double b = s.pop();
+      s.push(b+a);
+    }else if (symbol=="-"){
+      double a = s.pop();
+      double b = s.pop();
+      s.push(b-a);
+    }else if(symbol=="/"){
+      double a = s.pop();
+      double b = s.pop();
+      s.push(b/a);
+    }else if(symbol == "*"){
+      double a = s.pop();
+      double b = s.pop();
+      s.push(b*a);
+    }
+    else{
+      try{
+        s.push(stoi(symbol));
+      }
+      catch(exception &e){
+        continue;
+      }
+    }
+
+  }
+
+
+    return s.pop();
+  }
 
 
 // Do not write anything below this line
