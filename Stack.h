@@ -9,7 +9,7 @@
 using std::cout;
 using std::exception;
 using std::string;
-using std::stoi;
+using std::stod;
 using pep::vector;
 using std::istringstream;
 
@@ -82,7 +82,7 @@ double evaluate(const string input){
     }
     else{
       try{
-        s.push(stoi(symbol));
+        s.push(stod(symbol));
       }
       catch(exception &e){
         continue;
@@ -91,6 +91,7 @@ double evaluate(const string input){
 
   }
 
+std::cout<<"it worked";
 
     return s.pop();
   }
