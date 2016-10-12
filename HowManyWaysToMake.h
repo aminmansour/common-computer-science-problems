@@ -17,7 +17,7 @@ int howManyWaysToMake(int coinTotal,const vector<int> &coinStack){
  }
  if(coinTotal!= 0 ){
  int solutionsForCoinTotal = 0;
- vector<int> waysToMake(coinTotal);
+ vector<int> waysToMake(coinTotal+1);
  for(int coin:coinStack){
    int prev = 1;
         int amountOfSolutionsForCurrentCoin = coin;
