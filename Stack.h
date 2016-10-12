@@ -19,11 +19,12 @@ private:
   vector<double> stack;
   int size;
   int top;
+  int cap;
 
 public:
 
-  Stack():size(0),top(-1){
-    stack.resize(30);
+  Stack():size(0),top(-1),cap(30){
+    stack.resize(cap);
   }
 
   bool empty() const{
@@ -32,12 +33,11 @@ public:
 
   void push(const double input){
     if(stack.size()==(top+1)){
-      cout<<"The stack is full, adding failed.";
+        cap *= 2;
+        stack.resize(cap);
     }
-    else{
       stack[++top] = input;
       ++size;
-    }
   }
 
   double pop(){
