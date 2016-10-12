@@ -8,7 +8,11 @@ using std::size_t;
 // TODO: Your answer for question 2 goes here
 
 int maximumGates(const vector<int> &arrives,const vector<int> &departs){
-  int gates  = 1;
+
+  if(arrives.empty()){
+    return 0;
+  }
+  int gates = 1;
   for(size_t i = 0;i<(arrives.size()-1);i++){
     if(departs[i]>=arrives[i+1]){
         gates++;
