@@ -91,8 +91,6 @@ double evaluate(const string input){
 
   }
 
-std::cout<<"it worked";
-
     return s.pop();
   }
 
